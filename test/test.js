@@ -6,4 +6,7 @@ describe('the test to machine learning', function () {
     let MLmodel = require('../lib/MLmodel')
     assert(MLmodel.create)
   })
+  it('Create model', function () {
+    assert(1)
+  })
 })

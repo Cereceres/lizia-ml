@@ -4,7 +4,7 @@
   "description": "the machine learning wrapper",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/test.js"
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/4yopping/machinelearning#readme",
   "dependencies": {
-    "aws-sdk": "^2.4.12"
+    "aws-sdk": "^2.4.13",
+    "json-2-csv": "^2.0.22"
   },
   "devDependencies": {
     "co-mocha": "^1.1.3",
