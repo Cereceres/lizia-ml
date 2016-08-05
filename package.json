@@ -18,7 +18,8 @@
   "homepage": "https://github.com/4yopping/machinelearning#readme",
   "dependencies": {
     "aws-sdk": "^2.4.13",
-    "json-2-csv": "^2.0.22"
+    "json-2-csv": "^2.0.22",
+    "node-uuid": "^1.4.7"
   },
   "devDependencies": {
     "co-mocha": "^1.1.3",

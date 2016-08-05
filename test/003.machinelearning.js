@@ -2,13 +2,13 @@
 'use strict'
 process.env.MLDB_PATH = '../test/db_ml'
 const AWS = require('aws-sdk')
-AWS.config.region = 'us-east-1'
 const createModel = require('../lib/createModel')
 const delateModel = require('../lib/delateModel')
+const assert = require('assert')
+AWS.config.region = 'us-east-1'
 var uuid = require('node-uuid')
 let mlId = uuid.v4()
 let self
-const assert = require('assert')
 let predict = require('../lib/makePrediction')
 let data = []
 for (var i = 0; i < 100000; i++) {
