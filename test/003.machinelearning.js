@@ -64,9 +64,7 @@ describe('POST /payments', function () {
       emailAge: '2',
       EAScore: '500'
         /* anotherKey: ... */
-    }, {
-      MLModelId: this.modelSaved.MLModelId
-    })
+    }, this.modelSaved)
     .then(function (res) {
       assert(res.Prediction)
       assert(res.Prediction.predictedScores)
