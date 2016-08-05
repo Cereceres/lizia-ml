@@ -1,0 +1,4 @@
+--reporter spec
+--require co-mocha
+--timeout 45000
+--recursive

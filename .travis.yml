@@ -13,11 +13,6 @@ before_script:
   - psql -c 'create database psp;' -U postgres
 notifications:
   slack: '4yopping:ALhrivGHquJzo5MPODfnRIvI'
-
 script: npm test
 addons:
   postgresql: "9.4"
-
-
-after_success:
-  - source ./tasks/deploy.sh
