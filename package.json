@@ -18,5 +18,10 @@
   "homepage": "https://github.com/4yopping/machinelearning#readme",
   "dependencies": {
     "aws-sdk": "^2.4.12"
+  },
+  "devDependencies": {
+    "co-mocha": "^1.1.3",
+    "mocha": "^3.0.1",
+    "mongoose": "^4.5.8"
   }
 }
