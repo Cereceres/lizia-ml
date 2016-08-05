@@ -1,6 +1,6 @@
 
 'use strict'
-process.env.MLDB_PATH = '../test/db_ml'
+process.env.MLDB_PATH = './test/db_ml'
 const AWS = require('aws-sdk')
 const createModel = require('../lib/createModel')
 const delateModel = require('../lib/delateModel')
@@ -52,17 +52,19 @@ before(function (done) {
     done(error)
   })
 })
-describe('POST /payments', function () {
+describe('Make a prediction', function () {
   this.timeout(100000000)
   it('Should do a prediction', function (done) {
     self = this
     predict({ /* required */
-      hour: '23',
-      day: 'Lunes',
-      mount: '1234',
-      items: '1',
-      emailAge: '2',
-      EAScore: '500'
+      siftScienceScore: Math.random().toString(),
+      hour: (Math.floor(24 * Math.random()) + 1).toString(),
+      day: (Math.floor(7 * Math.random()) + 1).toString(),
+      mount: Math.floor(10000 * Math.random()).toString(),
+      items: (Math.floor(10 * Math.random()) + 1).toString(),
+      emailAge: (Math.floor(24 * Math.random()) + 1).toString(),
+      trust: Math.random().toString(),
+      EAScore: (Math.floor(1000 * Math.random()) + 1).toString()
         /* anotherKey: ... */
     }, this.modelSaved)
     .then(function (res) {
