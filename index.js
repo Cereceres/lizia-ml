@@ -17,28 +17,28 @@ const versioning = require('./lib/versioning')
 module.exports = class {
   constructor (options) {
     this.options = options
-    this.createDataSourceFromS3 = createDataSourceFromS3
-    this.delateEndPoint = delateEndPoint
-    this.getDataSource = getDataSource
-    this.getDataSourceComplete = getDataSourceComplete
-    this.getEndPoint = getEndPoint
-    this.getModelCompleted = getModelCompleted
-    this.mlDataset = mlDataset
-    this.s3 = s3
-    this.schema = schema
-    this.updateMLModel = updateMLModel
-    this.versioning = versioning
+    this.createDataSourceFromS3 = createDataSourceFromS3.bind(this)
+    this.delateEndPoint = delateEndPoint.bind(this)
+    this.getDataSource = getDataSource.bind(this)
+    this.getDataSourceComplete = getDataSourceComplete.bind(this)
+    this.getEndPoint = getEndPoint.bind(this)
+    this.getModelCompleted = getModelCompleted.bind(this)
+    this.mlDataset = mlDataset.bind(this)
+    this.s3 = s3.bind(this)
+    this.schema = schema.bind(this)
+    this.updateMLModel = updateMLModel.bind(this)
+    this.versioning = versioning.bind(this)
   }
   create (data, model, options) {
     options = options || {}
-    return create(data, Object.assign(options, this.options))
+    return create(data, model, Object.assign(options, this.options))
     .then(value => {
       this.model = value
     })
   }
-  prediction (datum, model) {
-    model = model || this.model
-    return predict(datum, model)
+  prediction (datum, MLModel) {
+    MLModel = MLModel || this.model
+    return predict(datum, MLModel)
   }
 
   delate (modelId, dataSourceId) {
