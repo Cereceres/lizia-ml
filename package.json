@@ -1,7 +1,7 @@
 {
   "name": "machinelearning",
   "version": "1.0.0",
-  "description": "the machine learning wrapper",
+  "description": "the machine learning aws wrapper",
   "main": "index.js",
   "scripts": {
     "test": "DEBUG=* mocha test"
