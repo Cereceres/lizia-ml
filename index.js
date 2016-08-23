@@ -38,9 +38,9 @@ module.exports = class {
       this.model = value
     })
   }
-  prediction (datum, MLModel) {
-    MLModel = MLModel || this.model
-    return predict(datum, MLModel)
+  prediction (datum, query) {
+    query.MLModelId = query.MLModelId || this.model
+    return predict(datum, query)
   }
 
   delate (modelId, dataSourceId) {
