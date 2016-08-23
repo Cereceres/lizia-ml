@@ -13,10 +13,12 @@ const s3 = require('./lib/s3')
 const schema = require('./lib/schema')
 const updateMLModel = require('./lib/updateMLModel')
 const versioning = require('./lib/versioning')
+const MLmodel = require('./MLmodel')
 
 module.exports = class {
   constructor (options) {
     this.options = options
+    this.MLmodel = MLmodel
     this.createDataSourceFromS3 = createDataSourceFromS3.bind(this)
     this.delateEndPoint = delateEndPoint.bind(this)
     this.getDataSource = getDataSource.bind(this)
