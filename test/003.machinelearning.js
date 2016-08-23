@@ -41,7 +41,7 @@ before(function (done) {
     path: 'ml-files',
     DataSourceName: 'PSP',
     DataSourceId: mlId,
-    type: 'MULTICLASS',
+    modelType: 'MULTICLASS',
     ScoreThreshold: 0.6,
     upgrade: true
   }).then(function (res) {
