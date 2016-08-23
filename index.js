@@ -33,8 +33,8 @@ module.exports = class {
   }
   create (data, model, options) {
     options = options || {}
-    Object.assign(this.options, options)
-    return create(data, model, this.options)
+    let _options = Object.assign(Object.assign({}, this.options))
+    return create(data, model, _options)
     .then(value => {
       this.model = value
     })
