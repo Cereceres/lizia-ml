@@ -2,6 +2,7 @@
 let db = require(process.env.MLDB_PATH)
 let mongoose = require('mongoose')
 let MLmodel = new mongoose.Schema({
+  type: String,
   owner: String,
   MLModelId: String,
   TrainingDataSourceId: String,
