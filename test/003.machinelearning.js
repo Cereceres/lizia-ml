@@ -74,7 +74,7 @@ describe('Make a prediction', function () {
       done(error)
     })
   })
-  it('Create data without data', function * (done) {
+  it('Create data without data', function * () {
     yield createModel({
       siftScienceScore: 'NUMERIC',
       hour: 'NUMERIC',
@@ -93,11 +93,10 @@ describe('Make a prediction', function () {
       modelType: 'MULTICLASS',
       ScoreThreshold: 0.6,
       upgrade: true
-    }).then(function (res) {
-      assert(res)
-      done()
     })
-      .catch(done)
+    .then(function (res) {
+      assert(res)
+    })
   })
 })
 after(function (done) {
