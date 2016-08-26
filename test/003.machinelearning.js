@@ -94,7 +94,7 @@ describe('Make a prediction', function () {
       ScoreThreshold: 0.6,
       upgrade: true
     }).then(function (res) {
-      self.modelSaved = res
+      assert(res)
       done()
     })
       .catch(done)
