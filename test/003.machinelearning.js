@@ -48,9 +48,7 @@ before(function (done) {
     self.modelSaved = res
     done()
   })
-  .catch(function (error) {
-    done(error)
-  })
+  .catch(done)
 })
 describe('Make a prediction', function () {
   this.timeout(100000000)
@@ -75,6 +73,31 @@ describe('Make a prediction', function () {
     .catch(function (error) {
       done(error)
     })
+  })
+  it('Create data without data', function * (done) {
+    yield createModel({
+      siftScienceScore: 'NUMERIC',
+      hour: 'NUMERIC',
+      day: 'CATEGORICAL',
+      mount: 'NUMERIC',
+      items: 'NUMERIC',
+      emailAge: 'NUMERIC',
+      trust: 'NUMERIC',
+      EAScore: 'NUMERIC',
+      Fraud: 'CATEGORICAL'
+    }, {
+      bucket: 'ml-aws',
+      path: 'ml-files',
+      DataSourceName: 'PSP',
+      DataSourceId: mlId,
+      modelType: 'MULTICLASS',
+      ScoreThreshold: 0.6,
+      upgrade: true
+    }).then(function (res) {
+      self.modelSaved = res
+      done()
+    })
+      .catch(done)
   })
 })
 after(function (done) {
