@@ -44,7 +44,7 @@ module.exports = class {
     return predict(datum, query)
   }
 
-  delate (modelId, dataSourceId) {
+  delete (modelId, dataSourceId) {
     modelId = modelId || this.model.modelId
     dataSourceId = dataSourceId || modelId
     return remove(modelId, dataSourceId)
