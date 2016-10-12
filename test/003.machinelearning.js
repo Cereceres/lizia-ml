@@ -21,7 +21,7 @@ for (var i = 0; i < 100000; i++) {
     emailAge: Math.floor(24 * Math.random()) + 1,
     trust: Math.random(),
     EAScore: Math.floor(1000 * Math.random()) + 1,
-    Fraud: Math.floor(5 * Math.random())
+    is: Math.floor(5 * Math.random())
   })
 }
 before(function (done) {
@@ -35,7 +35,7 @@ before(function (done) {
     emailAge: 'NUMERIC',
     trust: 'NUMERIC',
     EAScore: 'NUMERIC',
-    Fraud: 'CATEGORICAL'
+    is: 'CATEGORICAL'
   }, {
     bucket: 'ml-aws',
     path: 'ml-files',
@@ -84,7 +84,7 @@ describe('Make a prediction', function () {
       emailAge: 'NUMERIC',
       trust: 'NUMERIC',
       EAScore: 'NUMERIC',
-      Fraud: 'CATEGORICAL'
+      is: 'CATEGORICAL'
     }, {
       bucket: 'ml-aws',
       path: 'ml-files',
