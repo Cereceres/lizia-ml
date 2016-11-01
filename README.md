@@ -68,7 +68,7 @@ for (var i = 0; i < 100000; i++) {
   });
 ```
 
-## Class machinelearning.delate(MLModelId[,dataSourceId])->Promise.resolve(res)
+## Class machinelearning.delete(MLModelId[,dataSourceId])->Promise.resolve(res)
 The MLModelId is a string that model to be removed. Return a promise with the dataSourceId
 removed too.
 

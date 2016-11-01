@@ -1,5 +1,5 @@
 {
-  "name": "machinelearning",
+  "name": "machinelearning-aws",
   "version": "1.0.0",
   "description": "the machine learning aws wrapper",
   "main": "index.js",
