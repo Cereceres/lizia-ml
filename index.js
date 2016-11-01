@@ -14,7 +14,10 @@ const schema = require('./lib/schema')
 const updateMLModel = require('./lib/updateMLModel')
 const versioning = require('./lib/versioning')
 const MLmodel = require('./MLmodel')
-
+/**
+ * Class to exports the method to use aws ML
+ *
+ */
 module.exports = class {
   constructor (options) {
     this.options = options

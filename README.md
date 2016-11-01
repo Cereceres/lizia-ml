@@ -40,7 +40,7 @@ for (var i = 0; i < 100000; i++) {
     emailAge: Math.floor(24 * Math.random()) + 1,
     trust: Math.random(),
     EAScore: Math.floor(1000 * Math.random()) + 1,
-    Fraud: Math.floor(5 * Math.random())
+    Is: Math.floor(5 * Math.random())
   })
 }
   createModel(data,
@@ -54,7 +54,7 @@ for (var i = 0; i < 100000; i++) {
     emailAge: 'NUMERIC',
     trust: 'NUMERIC',
     EAScore: 'NUMERIC',
-    Fraud: 'CATEGORICAL'
+    Is: 'CATEGORICAL'
   },
   //options object
   {
